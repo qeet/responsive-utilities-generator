@@ -29,5 +29,5 @@
 @include responsiveUtilitiesGenerator(
    (640px, 768px, 1024px, 1280px),   // breakpoints
    'px',              // breakpoint type 'px' or 'em'
-   ('sm:','md:','lg:','xl:')     // breakpoint prefixes
+   ('sm\\:','md\\:','lg\\:','xl\\:')     // breakpoint prefixes
 );
