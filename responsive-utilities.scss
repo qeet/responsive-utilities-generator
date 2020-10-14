@@ -2,35 +2,32 @@
 
 // Add all utility classes here in a mixin
 
-@mixin utilityClasses($_prefix:'', $breakpoint_max:''){
+@mixin utilityClasses($_prefix:'', $breakpoint_max:'') {
   
-  .#{$_prefix}float-right { float: right; }
-  .#{$_prefix}float-left { float: right; }
-  .#{$_prefix}float-none { float: none; }
+  .#{$_prefix}w-full { width: 100%; }
 
-  .#{$_prefix}text-center { text-align:center; }
-  .#{$_prefix}text-left { text-align:left; }
-  .#{$_prefix}text-right { text-align:right; }
-  .#{$_prefix}hidden { display: none; }
+  .#{$_prefix}w-1\/2 { width: 50%; }
+
+  .#{$_prefix}w-1\/3 { width: 33.333333%; }
+  .#{$_prefix}w-2\/3 { width: 66.666667%; }
+
+  .#{$_prefix}w-1\/4 { width: 25%; }
+  .#{$_prefix}w-2\/4 { width: 50%; }
+  .#{$_prefix}w-3\/4 { width: 75%; }
+
+  .#{$_prefix}w-1\/5 { width: 20%; }
+  .#{$_prefix}w-2\/5 { width: 40%; }
+  .#{$_prefix}w-3\/5 { width: 60%; }
+  .#{$_prefix}w-4\/5 { width: 80%; }
+
+  .#{$_prefix}w-700 { width: 700px; }
+  .#{$_prefix}w-800 { width: 800px; }
+  .#{$_prefix}w-900 { width: 900px; }
+  .#{$_prefix}w-1000 { width: 1000px; }
 }
 
-@include responsiveUtilitiesGenerator();
-
-// Default settings for responsiveUtilitiesGenerator()
-
-//   (0, 480px, 800px), // breakpoints
-//   'px',              // breakpoint type px or em 
-//   (s-,m-,l-)         // breakpoint prefixes
-
-// Optionally call responsiveUtilitiesGenerator() with em units
-// @include responsiveUtilities Generator(
-//   (0, 35em, 55em),   // breakpoints
-//   'em',              // breakpoint type 'px' or 'em'
-// );
-
-// Optionally call responsiveUtilitiesGenerator() overwritting the defaults
-// @include responsiveUtilities Generator(
-//   (0, 35em, 55em),   // breakpoints
-//   'em',              // breakpoint type 'px' or 'em'
-//   (sm-,med-,lg-)     // breakpoint prefixes
-// );
+@include responsiveUtilitiesGenerator(
+   (640px, 768px, 1024px, 1280px),   // breakpoints
+   'px',              // breakpoint type 'px' or 'em'
+   ('sm:','md:','lg:','xl:')     // breakpoint prefixes
+);

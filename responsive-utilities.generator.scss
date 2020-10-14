@@ -19,9 +19,9 @@
     $breakpoint_min: nth($breakpoints, $i);
 
     // Add one to support pixel breakpoints, EMs don't need the extra bump
-    @if $breakpointType == 'px' {
-      $breakpoint_min: nth($breakpoints, $i) + 1;
-    }
+    //@if $breakpointType == 'px' {
+    //  $breakpoint_min: nth($breakpoints, $i) + 1;
+    //
 
     $breakpoint_max: '';
 
@@ -41,7 +41,7 @@
       //* middle breakpoints */
       @if $breakpoint_max != '' {
 
-        @media (min-width: $breakpoint_min) and (max-width: $breakpoint_max) {
+        @media (min-width: $breakpoint_min) {
           @include utilityClasses($prefix);
         }
 
